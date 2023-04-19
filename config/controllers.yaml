@@ -1,0 +1,4 @@
+cartesian_pose_tactile:
+    type: franka_cartesian_control/CartesianPoseTactile
+    arm_id: panda
+trajectory_time: 10.0
