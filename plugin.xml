@@ -1,4 +1,4 @@
-<library path="lib/libcartesian_tactile">
+<library path="lib/libfranka_cartesian_control">
   <class name="franka_cartesian_control/CartesianPoseTactile" type="franka_cartesian_control::CartesianPoseTactile" base_class_type="controller_interface::ControllerBase">
     <description>A controller that executes a motion based on cartesian poses</description>
   </class>
