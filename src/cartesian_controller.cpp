@@ -104,6 +104,7 @@ bool CartesianPoseTactile::response(franka_cartesian_control::Delta::Request& re
   ROS_INFO("Pose now: x - %f | y - %f | z - %f", pose_now[12], pose_now[13], pose_now[14]);
   pose_cmd = pose_now;
   res.result = true;
+  return true;
 }
 
 void CartesianPoseTactile::starting(const ros::Time& /* time */) {
