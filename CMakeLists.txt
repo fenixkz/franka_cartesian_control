@@ -122,7 +122,7 @@ add_service_files(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES main_pkg
+  LIBRARIES franka_cartesian_control
   CATKIN_DEPENDS roscpp rospy message_runtime franka_control franka_description franka_hw franka_msgs hardware_interface realtime_tools pluginlib geometry_msgs controller_interface
   DEPENDS Franka
 )
