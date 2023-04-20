@@ -16,6 +16,7 @@
 #include <std_msgs/Float32MultiArray.h>
 #include <std_msgs/Float32.h>
 #include <franka_cartesian_control/Delta.h>
+#include <cmath>
 
 namespace franka_cartesian_control {
 bool CartesianPoseTactile::init(hardware_interface::RobotHW* robot_hardware,
@@ -103,12 +104,23 @@ bool CartesianPoseTactile::response(franka_cartesian_control::Delta::Request& re
   pose_now = cartesian_pose_handle_->getRobotState().O_T_EE_d;
   ROS_INFO("Pose now: x - %f | y - %f | z - %f", pose_now[12], pose_now[13], pose_now[14]);
   pose_cmd = pose_now;
-  res.result = true;
-  return true;
+  double t0 = ros::Time::now().toSec();
+  double dt = 0;
+  while (dt < trajectory_time * 1.5){
+    dt = ros::Time::now().toSec() - t0;
+    std::array<double, 16> tmp = cartesian_pose_handle_->getRobotState().O_T_EE;
+    if (sqrt( pow((tmp[12] - pose_now[12] - delta_x), 2) + pow((tmp[13] - pose_now[13] - delta_y),2) + pow((tmp[14] - pose_now[14] - delta_z),2) ) < 0.001){
+      res.result = true;
+      return true;
+    }
+  }
+  res.result = false;
+  return false;
 }
 
 void CartesianPoseTactile::starting(const ros::Time& /* time */) {
   pose_now = cartesian_pose_handle_->getRobotState().O_T_EE_d;
+  pose_cmd = pose_now;
   elapsed_time_ = ros::Duration(0.0);
 }
 
