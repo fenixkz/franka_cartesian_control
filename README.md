@@ -41,4 +41,4 @@ The service will response true if the desired position has been achieved or fals
 
 In the _config_ directory there is a file _controllers.yaml_ which has the following parameter:
 
-trajectory_time - this parameter controls the total time to complete the trajectory 
+**trajectory_time** - this parameter controls the total time to complete the trajectory 
