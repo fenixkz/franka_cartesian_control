@@ -12,18 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  franka_control
-  franka_description
-  franka_example_controllers
   franka_hw
-  franka_msgs
   controller_interface
-  dynamic_reconfigure
-  eigen_conversions
-  geometry_msgs
   hardware_interface
-  tf
-  tf_conversions
   pluginlib
   realtime_tools
   roscpp
@@ -123,7 +114,7 @@ add_service_files(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES franka_cartesian_control
-  CATKIN_DEPENDS roscpp rospy message_runtime franka_control franka_description franka_hw franka_msgs hardware_interface realtime_tools pluginlib geometry_msgs controller_interface
+  CATKIN_DEPENDS roscpp rospy message_runtime franka_hw hardware_interface realtime_tools pluginlib controller_interface
   DEPENDS Franka
 )
 

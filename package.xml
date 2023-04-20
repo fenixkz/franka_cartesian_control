@@ -50,25 +50,13 @@
   <depend>geometry_msgs</depend>
   <depend>controller_interface</depend>
   <build_depend>message_generation</build_depend>
-  <build_depend>franka_control</build_depend>
-  <build_depend>franka_description</build_depend>
-  <build_depend>franka_example_controllers</build_depend>
   <build_depend>franka_hw</build_depend>
-  <build_depend>franka_msgs</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
-  <build_export_depend>franka_control</build_export_depend>
-  <build_export_depend>franka_description</build_export_depend>
-  <build_export_depend>franka_example_controllers</build_export_depend>
   <build_export_depend>franka_hw</build_export_depend>
-  <build_export_depend>franka_msgs</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
-  <exec_depend>franka_control</exec_depend>
-  <exec_depend>franka_description</exec_depend>
-  <exec_depend>franka_example_controllers</exec_depend>
   <exec_depend>franka_hw</exec_depend>
-  <exec_depend>franka_msgs</exec_depend>
   <exec_depend>message_runtime</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
